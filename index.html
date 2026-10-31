@@ -48,11 +48,15 @@
   .soc-x { background: #ff5c00; } .soc-x .soc-in { background: #ff6b1a; }
   .soc-gh { background: #fff; } .soc-gh .soc-in { background: #f7f7f7; }
   .soc-ig { background: #222; } .soc-ig .soc-in { background: #333; }
+  @media (min-width: 521px) and (max-width: 900px) {
+    .container { padding: 32px 24px 64px; }
+    .greeting { font-size: 32px; }
+  }
   @media (max-width: 520px) {
     .nav-username { font-size: 16px; }
     .nav-tab { padding: 8px 12px; font-size: 14px; }
-    .nav-tabs { width: 100%; }
-    .switch { width: 48px; height: 28px; }
+    .nav-tabs { width: 100%; order: 3; }
+    .switch { width: 48px; height: 28px; order: 2; }
     .switch .knob { width: 20px; height: 20px; }
     body.dark .switch .knob { transform: translateX(20px); }
     .greeting { font-size: 28px; }
@@ -62,6 +66,16 @@
     .soc-in { width: 40px; height: 40px; }
     .soc-label { font-size: 13px; letter-spacing: 1px; }
     .card { padding: 20px; }
+  }
+  @media (max-width: 360px) {
+    .container { padding: 16px 16px 48px; }
+    .greeting { font-size: 24px; }
+    .card { padding: 16px; }
+    .avatar { width: 220px; height: 220px; }
+    .social-row { gap: 16px; }
+    .soc { width: 60px; height: 60px; }
+    .soc-in { width: 38px; height: 38px; }
+    .email-address { font-size: 17px; }
   }
 </style>
 </head>
