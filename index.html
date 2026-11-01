@@ -120,7 +120,18 @@
     </div>
     <div class="card" id="blog">
       <div class="card-head"><span class="num">02</span><h2>部落格</h2></div>
-      <p>還沒有文章。</p>
+      <p><strong>httpSMS：把 Android 手機變成簡訊網關</strong></p>
+      <p style="color: var(--muted); font-size: 14px;">2026 年 11 月 1 日</p>
+      <p>httpSMS 是一個開源項目，能把一台 Android 手機變成簡訊網關：你調用一個簡單的 HTTP 接口，手機就會用自己的 SIM 卡幫你發簡訊；手機收到的簡訊，也能轉發到你指定的 webhook。作者來自喀麥隆，他想要一個自動收發簡訊的辦法，但很多國家根本買不到虛擬號碼，現成的方案又不好用，於是做了這個工具。</p>
+      <p><strong>怎麼用（託管版）</strong></p>
+      <p>在手機上裝好 httpSMS App，到官網註冊，從 Settings 裡拿到 API Key，之後調用 API 就能發簡訊：服務端先回一個已接受，手機收到推送後取回訊息、用系統簡訊功能發出去，最後再回傳送達報告。收簡訊則是反方向，轉發到你的 webhook。</p>
+      <p><strong>值得注意的功能</strong></p>
+      <p>端到端加密用的是 AES-256，密鑰只存在手機上，連伺服器都看不到簡訊內容。還可以限速，比如每分鐘最多 3 條，就算一次叫 100 條，也只按限速慢慢發，避免被判定濫發。另外有訊息過期機制：手機如果超時沒收到推送，訊息過期後會通知你。</p>
+      <p><strong>自己搭的版本</strong></p>
+      <p>也可以用 Docker 自己搭整套，但要準備 Firebase 推送、SMTP 郵件、Cloudflare Turnstile，還要自己編譯 Android App，適合開發者，普通用戶直接用託管版就好。</p>
+      <p><strong>實話</strong></p>
+      <p>手機必須開機在線、App 要在後台活著才能發；簡訊費還是運營商照常收。它適合需要程序化收發簡訊的場景，比如通知、驗證、自動化，如果只是平時手動發簡訊，普通簡訊 App 就夠了。</p>
+      <p>官網：<a href="https://httpsms.com" target="_blank" rel="noopener">httpsms.com</a>｜文檔：<a href="https://docs.httpsms.com" target="_blank" rel="noopener">docs.httpsms.com</a>｜開源倉庫：<a href="https://github.com/NdoleStudio/httpsms" target="_blank" rel="noopener">github.com/NdoleStudio/httpsms</a></p>
     </div>
     <div class="card" id="projects">
       <div class="card-head"><span class="num">03</span><h2>精選項目</h2></div>
