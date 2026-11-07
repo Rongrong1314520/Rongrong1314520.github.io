@@ -1,7 +1,7 @@
 /* Service worker for Rongrong1314520's personal site.
    Network-first so published updates always show up when online,
    with a cache fallback so the installed app still opens offline. */
-const CACHE = 'rongrong-v1';
+const CACHE = 'rongrong-v2';
 const CORE = ['/', '/index.html', '/photo.png', '/manifest.json', '/icon-192.png', '/icon-512.png'];
 
 self.addEventListener('install', (event) => {
